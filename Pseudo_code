@@ -1,0 +1,23 @@
+1. Load input profiles: PV(t), Wind(t), Load(t), Price(t)
+2. Define decision variables:
+       P_grid_buy, P_grid_sell,
+       P_bess_ch, P_bess_dis, SOC_BESS,
+       P_ev_ch, P_ev_dis, SOC_EV,
+       u_ev_ch, u_ev_dis
+3. Define objective:
+       Minimize Σ (P_grid_buy * Price_buy - P_grid_sell * Price_sell)
+4. Add constraints:
+       - Power balance: generation + storage = load
+       - SOC evolution for BESS and EV
+       - SOC limits and availability windows
+       - u_ch + u_dis ≤ 1
+5. Apply dynamic EV minimum SOC:
+       - Base 60%, Ready window 80% 
+6. Solve MILP using `intlinprog`
+7. Compute KPIs:
+       - Import/export energy
+       - Self-sufficiency
+       - Renewable share
+       - Storage cycles
+       - Net cost
+8. Plot results (SOC trends, grid power, price)
