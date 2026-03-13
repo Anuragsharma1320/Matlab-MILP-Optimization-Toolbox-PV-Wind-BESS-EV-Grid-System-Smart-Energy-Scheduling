@@ -7,7 +7,7 @@ This project implements a Mixed-Integer Linear Programming (MILP) controller for
 
 **Integrated PV, Wind, BESS, and EV (V2G) into a cost-minimization framework with dynamic tariff adaptation**.
 
-**Implemented binary decision variables for EV availability and charging/discharging scheduling**.
+**Implemented binary decision variables for EV **.
 
 **Designed dynamic SOC constraints ensuring EV readiness during user-defined “ready hours.""**
 
